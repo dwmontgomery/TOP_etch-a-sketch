@@ -1,5 +1,5 @@
 
-const container = element.querySelector("#container");
+const container = document.querySelector("#container");
 // create the divs for the grid
 
 function createDivs(numDivs) {
