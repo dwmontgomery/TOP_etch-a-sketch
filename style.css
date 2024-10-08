@@ -1,14 +1,13 @@
 
 #title {
     color: navy;
-    font: italic 90px;
     text-align: center;
 }
 
 #container {
     background-color: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     height: 960px;
     width: 960px;
@@ -16,5 +15,6 @@
 }
 
 .block {
-    color: blue;
+    width: 25%;
+    height: 25%;
 }
