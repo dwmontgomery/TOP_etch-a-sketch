@@ -1,12 +1,18 @@
 
 const container = document.querySelector("#container");
+const numButt = document.querySelector("#choose");
 
 // create the divs for the grid
 function createDivs(numDivs) {
-    for (i = 0; i < numDivs; i++) {
+
+    const blockSize = 960 / numDivs;
+
+    for (i = 0; i < numDivs * numDivs; i++) {
         const block = document.createElement("div");
         block.classList.add("block");
-        block.addEventListener("mouseover", changeColor(block));
+        block.style.width = `${blockSize}px`;
+        block.style.height = `${blockSize}px`;
+        block.addEventListener("mouseover", () => changeColor(block));
         container.appendChild(block);
     }
 }
@@ -17,12 +23,10 @@ function changeColor(block) {
 }
 
 function promptNumBlocks() {
-    let numDivs;
-    let text = prompt("Enter the number of blocks.");
-
+    let numDivs = parseInt(prompt("Enter the number of blocks."));
+    createDivs(numDivs);
 }
 
-createDivs(16);
 
-const numButt = document.querySelector("#choose");
 numButt.addEventListener("click", promptNumBlocks);
+
